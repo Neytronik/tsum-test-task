@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package ru.orlovich.proto;
+
+message SumSaveRequest {
+  int32 sum = 1;
+  bool slow = 2;
+}
+
+message SumSaveResponse {
+  int32 code = 1;
+  string status = 2;
+}
+
+service SumHolderService {
+  rpc save(SumSaveRequest) returns (SumSaveResponse);
+}
